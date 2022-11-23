@@ -9,4 +9,4 @@
 # AUTHOR : 
     Name: Mcnores Samuel Nkhoma;
     Email: samuelmcnores1@gmail.com;
-    # [Linkedin](https://www.linkedin.com/in/mcnores-samuel-a4020b21b/)
+# [Linkedin](https://www.linkedin.com/in/mcnores-samuel-a4020b21b/)
