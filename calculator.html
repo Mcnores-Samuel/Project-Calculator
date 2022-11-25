@@ -5,42 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="calculator.css" type="text/css" />
     <title>Calculator</title>
-    <script src="calculator.js"></script>
+    <script src="calculator.js" defer></script>
   </head>
   <body>
     <h1>Calculator</h1>
     <div class="mainc">
       <header>CRYPTIC-FORMULA</header>
-        <p>0</p>
+      <div class="screen-display">
+        <div data-previousOperation class="previous"></div>
+        <div data-currentOperation class="current"></div>
+      </div>
         <div class="btn-container">
           <div>
-            <button class="clear">AC</button>
-            <button>÷</button>
-            <button>x</button>
-            <button>DEL</button>
+            <button data-all-delete class="clear">AC</button>
+            <button data-operands class="keypads">÷</button>
+            <button data-operands class="keypads">x</button>
+            <button data-backspace class="backspace">DEL</button>
         </div>
         <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>-</button>
+            <button data-numberbutton class="keypads">7</button>
+            <button data-numberbutton class="keypads">8</button>
+            <button data-numberbutton class="keypads">9</button>
+            <button data-operands class="keypads">-</button>
         </div>
         <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>+</button>
+            <button data-numberbutton class="keypads">4</button>
+            <button data-numberbutton class="keypads">5</button>
+            <button data-numberbutton class="keypads">6</button>
+            <button data-operands class="keypads">+</button>
         </div>
         <div>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>%</button>
+          <button data-numberbutton class="keypads">1</button>
+          <button data-numberbutton class="keypads">2</button>
+          <button data-numberbutton class="keypads">3</button>
+          <button data-operands class="keypads">%</button>
       </div>
         <div>
-            <button>0</button>
-            <button>.</button>
-            <button class="equal">=</button>
+            <button data-numberbutton class="keypads">0</button>
+            <button data-numberbutton class="keypads">.</button>
+            <button data-answer id="equal">=</button>
         </div>
     </div>
         </div>

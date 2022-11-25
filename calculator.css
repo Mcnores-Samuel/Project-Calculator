@@ -24,14 +24,24 @@ header {
     padding-bottom: 5px;
 }
 
-p {
-    width: 250px;
-    padding: 25px;
-    height: 20px;
-    background-color: rgb(177, 175, 175);
+.screen-display {
+    background-color: rgba(223, 217, 217, .80);
+    color: black;
     border: 10px solid black;
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: 310px;
+    height: 100px;
+    padding: 5px;
+    overflow-x: scroll;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 button {
@@ -43,7 +53,9 @@ button {
     font-size: large;
     font-weight: bold;
     transition: 0.5s ease-out;
+    cursor: pointer;
 }
+
 
 button:active {
     background-color: rgb(42, 48, 46);
@@ -52,11 +64,12 @@ button:active {
     z-index: 2;
 }
 
-.equal {
-  width: 150px;
+#equal {
+  width: 130px;
   background-color: rgb(53, 53, 212);
   color: white;
   border-radius: 30px;
+  margin-left: 8px;
   
 }
 
@@ -69,6 +82,10 @@ button:active {
     padding: 5px;
     border-radius: 10px;
     background-color: rgb(18, 18, 61);
-    z-index: 1;
+    margin-top: 3px;
+
+}
+
+.previous {
 
 }
