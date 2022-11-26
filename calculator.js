@@ -5,6 +5,7 @@ const displayCurrentOperation = document.querySelector("[data-currentOperation]"
 const deleteAll = document.querySelector("[data-all-delete]");
 const backspace = document.querySelector("[data-backspace]");
 const results = document.querySelector("[data-answer]")
+let data = "";
 
 let displayNumber = number => {
     if (number.textContent == "."){
@@ -21,6 +22,10 @@ let displayNumber = number => {
 
 let calculatorOperations = (operand, firstNumber, secondNumber) => {
     if (operand == "+") return parseFloat(firstNumber) + parseFloat(secondNumber)
+    if (operand == "-") return Math.round(parseFloat(firstNumber) - parseFloat(secondNumber))
+    if (operand == "x") return parseFloat(firstNumber) * parseFloat(secondNumber)
+    if (operand == "÷") return parseFloat(firstNumber) / parseFloat(secondNumber)
+    if (operand == "%") return (parseFloat(firstNumber) * parseFloat(secondNumber)) / 100;
 }
 
 
@@ -32,9 +37,22 @@ numberButtons.forEach(number => {
 
 operands.forEach(element => {
     element.addEventListener("click", () => {
-        displayPreviousOperation.textContent = `${displayCurrentOperation.textContent}${element.textContent}`
-        displayPreviousOperation.style = "font-size: small;background-color: rgba(80, 114, 102, .75); padding: 3px;"
-        displayCurrentOperation.textContent = ''
+        const first = displayPreviousOperation.textContent.slice(0, -1)
+        const second = displayCurrentOperation.textContent
+        console.log("first", first)
+        console.log("second", second)
+        console.log("data", data)
+        if(displayPreviousOperation.textContent != ""){
+            displayPreviousOperation.textContent = `${calculatorOperations(element.textContent, first, second)}${element.textContent}`
+            displayPreviousOperation.style = "font-size: small;background-color: rgba(80, 114, 102, .75); padding: 3px;"
+            displayCurrentOperation.textContent = ''
+        
+        }
+        else {
+            displayPreviousOperation.textContent = `${displayCurrentOperation.textContent}${element.textContent}`
+            displayPreviousOperation.style = "font-size: small;background-color: rgba(80, 114, 102, .75); padding: 3px;"
+            displayCurrentOperation.textContent = ''
+        }
         
     })
 })
@@ -54,6 +72,9 @@ results.addEventListener("click", () => {
     const first = displayPreviousOperation.textContent.slice(0, -1)
     const second = displayCurrentOperation.textContent
     displayPreviousOperation.textContent = `${displayPreviousOperation.textContent}${displayCurrentOperation.textContent}`;
-    displayCurrentOperation.textContent = `${calculatorOperations(operator, first, second)}`;
+    displayCurrentOperation.textContent = `${calculatorOperations(operator, first, second).toString()}`;
+    displayPreviousOperation.textContent = ''
+    displayPreviousOperation.style = "none"
 })
+
 
