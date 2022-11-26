@@ -4,8 +4,7 @@ const displayPreviousOperation = document.querySelector("[data-previousOperation
 const displayCurrentOperation = document.querySelector("[data-currentOperation]");
 const deleteAll = document.querySelector("[data-all-delete]");
 const backspace = document.querySelector("[data-backspace]");
-const results = document.querySelector("[data-answer]")
-let data = "";
+const results = document.querySelector("[data-answer]");
 
 let displayNumber = number => {
     if (number.textContent == "."){
@@ -39,9 +38,6 @@ operands.forEach(element => {
     element.addEventListener("click", () => {
         const first = displayPreviousOperation.textContent.slice(0, -1)
         const second = displayCurrentOperation.textContent
-        console.log("first", first)
-        console.log("second", second)
-        console.log("data", data)
         if(displayPreviousOperation.textContent != ""){
             displayPreviousOperation.textContent = `${calculatorOperations(element.textContent, first, second)}${element.textContent}`
             displayPreviousOperation.style = "font-size: small;background-color: rgba(80, 114, 102, .75); padding: 3px;"
